@@ -3,6 +3,9 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import { AgmCoreModule } from '@agm/core';
+
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -33,7 +36,7 @@ import {
   MatTableModule,
   MatTabsModule,
   MatToolbarModule,
-  MatTooltipModule
+  MatTooltipModule,
 } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {CatalogComponent} from './catalog/catalog.component';
@@ -48,6 +51,7 @@ import {LoginComponent} from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {baseURL} from './shared/baseurl';
 import {HttpClientModule} from '@angular/common/http';
+import { MapsContactComponent } from './maps-contact/maps-contact.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +63,8 @@ import {HttpClientModule} from '@angular/common/http';
     AboutComponent,
     HomeComponent,
     ContactComponent,
-    LoginComponent
+    LoginComponent,
+    MapsContactComponent,
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule,
@@ -68,7 +73,10 @@ import {HttpClientModule} from '@angular/common/http';
     MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatRippleModule,
     MatSelectModule, MatSidenavModule, MatSliderModule, MatSlideToggleModule, MatSnackBarModule, MatSortModule, MatTableModule,
     MatTabsModule, MatToolbarModule, MatTooltipModule,
-    FlexLayoutModule, AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule
+    FlexLayoutModule, AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAuwL8tMcu0oIACdB0lXOvWMb4NWTaZa-0'
+    })
   ],
   providers: [
     {provide: 'BaseURL', useValue: baseURL}
