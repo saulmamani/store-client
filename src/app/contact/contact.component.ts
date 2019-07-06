@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ContactType, Message} from '../shared/message';
 
+import {MatDialog} from '@angular/material';
+import { MapsDialogComponent } from '../maps-dialog/maps-dialog.component';
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -13,7 +16,7 @@ export class ContactComponent implements OnInit {
   message: Message;
   contactType = ContactType;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, public dialog: MatDialog) {
     this.createForm();
   }
 
@@ -47,6 +50,11 @@ export class ContactComponent implements OnInit {
     // work around
     const form: HTMLFormElement = document.getElementById('form') as HTMLFormElement;
     form.reset();
+  }
+
+
+  openMaps() {
+    this.dialog.open(MapsDialogComponent,{width: '800px', height: '450px'});
   }
 
 }

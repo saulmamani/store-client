@@ -52,6 +52,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {baseURL} from './shared/baseurl';
 import {HttpClientModule} from '@angular/common/http';
 import { MapsContactComponent } from './maps-contact/maps-contact.component';
+import { MapsDialogComponent } from './maps-dialog/maps-dialog.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { MapsContactComponent } from './maps-contact/maps-contact.component';
     ContactComponent,
     LoginComponent,
     MapsContactComponent,
+    MapsDialogComponent,
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule,
@@ -82,7 +84,7 @@ import { MapsContactComponent } from './maps-contact/maps-contact.component';
     {provide: 'BaseURL', useValue: baseURL}
   ],
   entryComponents: [
-    LoginComponent
+    LoginComponent, MapsDialogComponent
   ],
   bootstrap: [AppComponent]
 })

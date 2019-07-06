@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {MatDialog} from '@angular/material';
+import { MapsDialogComponent } from '../maps-dialog/maps-dialog.component';
 
 @Component({
   selector: 'app-footer',
@@ -7,10 +9,14 @@ import {Component, OnInit} from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() {
+  constructor(public dialog: MatDialog) {
   }
 
   ngOnInit() {
+  }
+
+  openMaps() {
+    this.dialog.open(MapsDialogComponent,{width: '800px', height: '450px'});
   }
 
 }
